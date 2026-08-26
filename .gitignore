@@ -1,0 +1,42 @@
+# ==========================================================
+# Nordic_Flash_Tool / 54L15-Programming-Tool .gitignore
+# 原则：仓库里只保留源码与构建配置，排除二进制产物、密钥和生产数据
+# ==========================================================
+
+# --- PyInstaller 构建产物（可从源码重新生成） ---
+build/
+dist/
+
+# --- Python 常规忽略 ---
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+.venv/
+venv/
+env/
+
+# --- 固件签名私钥：绝不能提交 ---
+*.pem
+*.key
+
+# --- 固件 hex 文件：体积大，如需版本管理请改用 Git LFS 单独追踪 ---
+*.hex
+
+# --- 烧录 token / 产线数据：属于生产敏感数据，不应入库 ---
+token/
+
+# --- 运行时日志与现场数据 ---
+dist/logs/
+dist/output/
+dist/flash_state.json
+*.log
+
+# --- 空占位/杂项文件（如无实际内容可保留此规则）---
+54L15自动化烧录工具.txt
+
+# --- 系统/编辑器杂项 ---
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
